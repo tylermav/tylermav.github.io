@@ -8,10 +8,15 @@ function setup() {
 function draw() {
   background(51);
 
-  rotateX(angle);
+  rotateX(angleX);
+  rotateY(angleY);
   box(200);
-  
-  angle += 0.005;
+}
+
+function mouseDragged() {
+	angleX += mouseX;
+	angleY += mouseY;
+
 }
 
 function windowResized() {
