@@ -1,41 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Color Game</title>
-
-	<link rel="stylesheet" type="text/css" href="a.css">
-	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<title>jQuery Todo List</title>
+		<link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+		<script type="text/javascript" src='assets/js/lib/jquery-3.2.1.min.js'></script>
 </head>
 <body>
-	
-
-	<h1>
-	The Great 
-		<br>
-	<span id='rgb'>RGB</span> 
-		<br>
-	Color Game
-	</h1>
-	
-	<div id='stripe'>
-		<button id='reset'>New Colors</button>
-		<span id='message'></span>
-		<button class='mode'>Easy</button>
-		<button class='mode selected'>Hard</button>
-	</div>
 
 	<div id='container'>
-		<div class='square'></div>
-		<div class='square'></div>
-		<div class='square'></div>
-		<div class='square'></div>
-		<div class='square'></div>
-		<div class='square'></div>
+		<h1>To-do List<i class="fa fa-plus-square-o" aria-hidden="true"></i>
+</h1>
+		<input type="text" placeholder="Add New Todo (Hit Enter)">
+
+		<ul>
+			<li><span><i class="fa fa-trash-o" aria-hidden="true"></i></span>Add a new goal by entering in the box above</li>
+			<li><span><i class="fa fa-trash-o" aria-hidden="true"></i></span>Click text to cross-out</li>
+			<li><span><i class="fa fa-trash-o" aria-hidden="true"></i></span>Hover over and click the trash bin to delete</li>
+			<li><span><i class="fa fa-trash-o" aria-hidden="true"></i></span>Only works with computers -- :(</li>
+			<li><span><i class="fa fa-trash-o" aria-hidden="true"></i></span>Can't save your list yet either! -- :'(</li>
+		</ul>
 	</div>
-	
 
-
-
-	<script type="text/javascript" src='a.js'></script>
+	<script type="text/javascript" src='assets/js/script.js'></script>
 </body>
 </html>
