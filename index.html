@@ -4,10 +4,18 @@
     <meta charset="UTF-8">
     <title>Space</title>
     <link rel="stylesheet" href="style.css">
+    <style type="text/css">
+    	body {
+    		background: black;
+    		cursor: none;
+    	}
+
+
+    </style>
     <script type="text/javascript" src="paper-full.js"></script>
     <script type="text/paperscript" canvas="canvas">
     // The amount of symbol we want to place;
-    var count = 150;
+    var count = 200;
 
     // Create a symbol, which we will use to place instances of later:
     var path = new Path.Circle({
@@ -17,18 +25,21 @@
         strokeColor: 'black'
     });
 
-    var symbol = new SymbolDefinition(path);
 
     // Place the instances of the symbol:
     for (var i = 0; i < count; i++) {
         // The center position is a random point in the view:
+    		// Changes the color nth times depending on how many is given in the count
+    		//	and sets the colors to the 'symbols'
+    		path['fillColor'] = randColor();
+    		var symbol = new SymbolDefinition(path);
         var center = Point.random() * view.size;
         var placed = symbol.place(center);
-        var scale = (i + 1) / count;
-        placed.scale(scale);
+        var scale = (i + (i + 10)) / count; // Controls the sizes of the symbols
+        placed.scale(scale); 
         placed.data.vector = new Point({
             angle: Math.random() * 360,
-            length : scale * Math.random() / 5
+            length : scale * Math.random() / 2 // Controls how fast the symbols moves
         });
     }
 
@@ -77,6 +88,14 @@
         if (position.y < -itemBounds.height) {
             position.y = bounds.height  + itemBounds.height / 2;
         }
+    }
+
+    function randColor() {
+    	var r = Math.floor(Math.random()*156) + 100;
+    	var g = Math.floor(Math.random()*156) + 100;
+    	var b = Math.floor(Math.random()*156) + 100;
+
+    	return 'rgb('+ r +', '+ g +', '+ b +')';
     }
     </script>
 </head>
