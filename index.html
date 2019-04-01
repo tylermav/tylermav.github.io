@@ -10,6 +10,7 @@
     		cursor: none;
     	}
 
+
     </style>
     <script type="text/javascript" src="paper-full.js"></script>
     <script type="text/paperscript" canvas="canvas">
@@ -35,7 +36,7 @@
         var center = Point.random() * view.size;
         var placed = symbol.place(center);
         var scale = (i + (i + 10)) / count; // Controls the sizes of the symbols
-        placed.scale(scale);
+        placed.scale(scale); 
         placed.data.vector = new Point({
             angle: Math.random() * 360,
             length : scale * Math.random() / 2 // Controls how fast the symbols moves
@@ -48,6 +49,10 @@
     });
 
     var mouseVector = vector.clone();
+
+    function onMouseMove(event) {
+        mouseVector = view.center - event.point;
+    }
 
     // The onFrame function is called up to 60 times a second:
     function onFrame(event) {
