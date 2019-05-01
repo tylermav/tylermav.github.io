@@ -6,9 +6,24 @@
     <link rel="stylesheet" href="style.css">
     <style type="text/css">
     	body {
-    		background: black;
+    		background: black;;
     		cursor: none;
     	}
+
+      #canvas {
+        position: absolute;
+        z-index: 0;
+      }
+
+      #not_done_yet {
+        position: absolute;
+        z-index: 2;
+        left: 1em;
+        top: 40%;
+        width: auto;
+        font-size: 6em;
+        color:white;
+      }
 
 
     </style>
@@ -36,10 +51,10 @@
         var center = Point.random() * view.size;
         var placed = symbol.place(center);
         var scale = (i + (i + 10)) / count; // Controls the sizes of the symbols
-        placed.scale(scale); 
+        placed.scale(scale);
         placed.data.vector = new Point({
             angle: Math.random() * 360,
-            length : scale * Math.random() / 2 // Controls how fast the symbols moves
+            length : scale * Math.random() * 1 // Controls how fast the symbols moves
         });
     }
 
@@ -48,15 +63,19 @@
         length: 0
     });
 
+/* PART 1A: (look towards 1b for info):
     var mouseVector = vector.clone();
 
     function onMouseMove(event) {
         mouseVector = view.center - event.point;
     }
+*/
 
     // The onFrame function is called up to 60 times a second:
     function onFrame(event) {
-        vector = vector + (mouseVector - vector) / 30;
+
+// PART 1B: Controls the camera and follows the mouse
+        // vector = vector + (mouseVector - vector) / -10000;
 
         // Run through the active layer's children list and change
         // the position of the placed symbols:
@@ -101,5 +120,6 @@
 </head>
 <body>
     <canvas id="canvas" resize hidpi="off" style="background:black"></canvas>
+    <div id="not_done_yet">W.I.P.</div>
 </body>
 </html>
