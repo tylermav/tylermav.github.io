@@ -43,13 +43,32 @@
       }
 
       .text {
-        font-family: Lora;
         color: white;
         text-align: center;
-        font-size: 25px;
+        font-size: 40px;
         position: relative;
         margin: 0;
+      }
 
+      a {
+          font-family: Lora;
+          -o-transition:.5s;
+          -ms-transition:.5s;
+          -moz-transition:.5s;
+          -webkit-transition:.5s;
+          /* ...and now for the proper property */
+          transition:.5s;
+          } /* Globally */
+
+      /* Each state */
+      a:link {
+       text-decoration: none;
+       color: white;
+     }
+
+      a:link:hover {
+
+       color: rgba(200,200,200,0.6);
       }
 
 
@@ -161,7 +180,7 @@
     <div class="main_square_container">
       <div class="main_square">
         <div class="text">
-          <h1>Tyler Ma</h1>
+          <a href="https://my.indeed.com/p/tylerm-xytln5w">Tyler Ma</a>
         <div>
       </div>
     </div>
