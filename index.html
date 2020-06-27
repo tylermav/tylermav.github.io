@@ -43,7 +43,6 @@
       }
 
       .text {
-        color: white;
         text-align: center;
         font-size: 40px;
         position: relative;
@@ -52,25 +51,28 @@
 
       a {
           font-family: Lora;
+          color: white;
           -o-transition:.5s;
           -ms-transition:.5s;
           -moz-transition:.5s;
           -webkit-transition:.5s;
           /* ...and now for the proper property */
           transition:.5s;
+
           } /* Globally */
 
-      /* Each state */
       a:link {
+       text-decoration: none;
+     }
+
+     a:link:active, a:visited:active {
        text-decoration: none;
        color: white;
      }
 
       a:link:hover {
-
        color: rgba(200,200,200,0.6);
       }
-
 
     </style>
     <script type="text/javascript" src="paper-full.js"></script>
